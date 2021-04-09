@@ -9,11 +9,13 @@ class Search extends React.Component {
 
   handleClick = () => {
     this.props.handleSearch(this.textInput.current.value);
+    this.textInput.current.value = '';
+
   }
 
   render() {
     return (
-      <main>
+      <div>
         <InputGroup className="mb-3">
           <FormControl
             ref={this.textInput}
@@ -25,7 +27,7 @@ class Search extends React.Component {
             <Button onClick={this.handleClick} variant="outline-secondary">Explore!</Button>
           </InputGroup.Append>
         </InputGroup>
-      </main>
+      </div>
     );
   }
 }
