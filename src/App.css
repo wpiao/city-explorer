@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.city-explorer {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+div.mb-3 {
+  margin: auto;
+  width: 80%;
+}
+
+div.card {
+  margin: auto;
+  background-color: bisque;
+}
+
+.card-body {
+  margin: auto;
+}
+
+.fade {
+  width: 80%;
+  margin: auto;
+}
