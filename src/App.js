@@ -2,6 +2,7 @@ import React from 'react';
 import Search from './Search.js';
 import City from './City.js';
 import Error from './Error.js';
+import Weather from './Weather.js';
 import axios from 'axios';
 import './App.css';
 
@@ -32,7 +33,9 @@ class App extends React.Component {
           lon: cityData.lon
         }
       });
-      console.log(weatherResponse);
+      this.setState({
+        weatherData: weatherResponse.data
+      });
     } catch (error) {
       this.setState({
         isSearchedYet: false,
@@ -48,6 +51,7 @@ class App extends React.Component {
         <h1>City Explorer</h1>
         <Search handleSearch={this.handleSearch} />
         {this.state.isSearchedYet ? <City cityData={this.state.cityForSearch} /> : ''}
+        {this.state.weatherData ? <Weather data={this.state.weatherData} /> : ''}
         {this.state.isThereError ? <Error errorMessage={this.state.errorMessage} /> : ''}
         <footer>&copy; Wenhao Piao</footer>
       </div>
