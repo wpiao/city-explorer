@@ -19,13 +19,21 @@ class App extends React.Component {
   handleSearch = async (city) => {
     try {
       const response = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${city}&format=json`);
+      const cityData = response.data[0];
       this.setState({
         isSearchedYet: true,
         isThereError: false,
-        cityForSearch: response.data[0]
+        cityForSearch: cityData
       });
+
+      const weatherResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/weather`, {
+        params: {
+          lat: cityData.lat,
+          lon: cityData.lon
+        }
+      });
+      console.log(weatherResponse);
     } catch (error) {
-      console.log(typeof error);
       this.setState({
         isSearchedYet: false,
         isThereError: true,
