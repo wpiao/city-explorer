@@ -5,12 +5,11 @@ class Weather extends Component {
   render() {
     return (
       <>
-        <h2>City name: will be updated soon</h2>
         <Table striped bordered hover>
           <thead>
             <tr>
               <th>Date</th>
-              <th>Description</th>
+              <th>Description (Unit: Celcius)</th>
             </tr>
           </thead>
           <tbody>

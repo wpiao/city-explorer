@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, Button } from 'react-bootstrap';
 
-function Error({ cityErrorMessage, weatherErrorMessage }) {
+function Error({ cityErrorMessage, weatherErrorMessage, movieErrorMessage }) {
   const [show, setShow] = useState(true);
 
   if (show) {
@@ -10,6 +10,7 @@ function Error({ cityErrorMessage, weatherErrorMessage }) {
         <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
         <p>{cityErrorMessage}</p>
         <p>{weatherErrorMessage}</p>
+        <p>{movieErrorMessage}</p>
       </Alert>
     );
   }
