@@ -3,7 +3,7 @@ import Search from './Search.js';
 import City from './City.js';
 import Error from './Error.js';
 import Weather from './Weather.js';
-import Movie from './Movie.js';
+import Movies from './Movies.js';
 import axios from 'axios';
 import './App.css';
 
@@ -81,7 +81,7 @@ class App extends React.Component {
         {this.state.cityErrorMessage ? <Error cityErrorMessage={this.state.cityErrorMessage} /> : ''}
         {this.state.weatherData ? <Weather data={this.state.weatherData} /> : ''}
         {this.state.weatherErrorMessage ? <Error weatherErrorMessage={this.state.weatherErrorMessage} /> : ''}
-        {this.state.movieData ? <Movie movies={this.state.movieData} /> : ''}
+        {this.state.movieData ? <Movies movies={this.state.movieData} /> : ''}
         {this.state.movieErrorMessage ? <Error movieErrorMessage={this.state.movieErrorMessage} /> : ''}
         <footer>&copy; Wenhao Piao</footer>
       </div>
